@@ -56,19 +56,5 @@ router.route('/:id').delete((req, res) => {
         .catch(err => res.status(400).json('Error: '+ err));
 });
 
-router.route('/update/:id').post((req, res) => {
-    
-    Product.findById(req.params.id)
-        .then(exercise => {
-            product.name = req.body.name;
-            product.description = req.body.description;
-            product.price = Number(req.body.price);
-            product.vendorname = req.body.vendorname;
-            product.save()
-                .then(() => res.json('Product updated!'))
-                .catch(err => res.status(400).json('Error: '+ err));
-        })
-        .catch(err => res.status(400).json('Error: '+ err));
-});
 
 module.exports = router;
