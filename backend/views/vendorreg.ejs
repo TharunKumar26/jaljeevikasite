@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- //Meta tag Keywords -->
+	<!--/Style-CSS -->
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css" media="all" />
+	<!--//Style-CSS -->
+</head>
+
+<body>
+	<!-- /login-section -->
+	<section class="w3l-login-6">
+		<div class="login-hny">
+			<div class="form-content">
+				<div class="form-right">
+					<div class="overlay">
+						<div class="grid-info-form">
+							<h5>Say hello</h5>
+							<h3>CREATE ACCOUNT </h3>
+							<p>Hi! Register youdelf in Jaljeevika.</p>
+							<a href="index.html" class="read-more-1 btn">Get Started</a>
+						</div>
+					
+					</div>
+				</div>
+				<div class="form-left">
+					<div class="middle">
+						<h4>Join Us</h4>
+						<p>Create Your Account, It's Free.</p>
+					</div>
+					<%- include ("./partials/messages") %>
+					<form action="/vendor/register" method="POST" class="signin-form">
+						<div class="form-input">
+							<label>Full Name</label>
+							<input type="text" name="name" placeholder="" required />
+						</div>
+							<div class="form-input">
+								<label>Vendor Name</label>
+								<input type="text" name="vendorname" placeholder="" required />
+							</div>
+							<div class="form-input">
+								<label>Email</label>
+								<input type="email" name="email" placeholder="" required />
+							</div>
+
+                                                        <div class="form-input">
+								<label>Phone</label>
+								<input type="Number" name="phone" placeholder="" required />
+							</div>
+                                                        <div class="form-input">
+								<label>GST</label>
+								<input type="String" name="gst" placeholder="Enter your GST No"/>
+							</div>
+
+                                                        <div class="form-input">
+								<label>Pancard</label>
+								<input type="String" name="pancard" placeholder="Enter Pancard No"/>
+							</div>
+                                                       <div class="form-input">
+								<label>Address1</label>
+								<input type="String"name="address1" placeholder="" required />
+							</div>
+                                                        <div class="form-input">
+								<label>Address2</label>
+								<input type="String" name="address2" placeholder="" required />
+							</div>
+                                                        <div class="form-input">
+								<label>landmark</label>
+								<input type="String" name="landmark" />
+							</div>
+                                                         <div class="form-input">
+								<label>District</label>
+								<input type="String"name="district" placeholder="" required />
+							</div>
+                                                        <div class="form-input">
+								<label>State</label>
+								<input type="String"name="state" placeholder="" required />
+							</div>
+                                                        <div class="form-input">
+								<label>Country</label>
+								<input type="String"name="country" placeholder="" required />
+							</div>
+						
+								
+<div class="form-input">
+								<label>pincode</label>
+								<input type="Number"name="pincode" placeholder="" required />
+							</div>
+                                                        <div class="form-input">
+
+
+							<div class="form-input">
+								<label>Password1</label>
+								<input type="password" name="password" placeholder="" required />
+							</div>
+<div class="form-input">
+								<label>Password2</label>
+								<input type="password" name="password2" placeholder="" required />
+							</div>
+							
+							<label class="container">I agree to <a href="#">Conditions</a> of Use and <a href="#">Privacy</a>
+								<input type="checkbox" value="agreed" name="conditions">
+								<span class="checkmark"></span>
+							</label>
+							<button type="submit" class="btn">Create account</button>
+					</form>
+					
+				</div>
+				
+			</div>
+			
+		</div>
+	</section>
+	
+</body>
+
+</html>

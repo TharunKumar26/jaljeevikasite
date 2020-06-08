@@ -7,6 +7,9 @@ const productSchema = new Schema({
     description: {type: String, required: true},
     price: {type: Number, required: true},
     vendorname: {type: String, required: true},
+    imgurl: {type: String, required: true},
+    category: {type: String},
+    brand: {type: String},
 }, {
     timestamps: true,
 });

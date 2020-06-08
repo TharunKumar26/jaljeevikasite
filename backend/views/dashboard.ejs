@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Jaljeevika</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body onload="filterSelection('1')" style="font-family:candara">
+
+<!-------header part----------->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3">
+     <img src="/images/logo.jpg" id="logo"></div>
+     <div class="col-sm-6">
+      <a href="#"><button type="button" class="btn btn-default" id="home">HOME</button></a>
+      <a href="#aboutus"><button type="button" class="btn btn-default" id="about">ABOUT US</button></a>
+      <button type="button" class="btn btn-default" id="services">SERVICES</button>
+      <button type="button" class="btn btn-default" id="contact">CONTACT US</button>
+<!------------------------------------------------------------------------>
+    </div>
+        <div class="col-sm-3">
+          <a href="#"><button id="login"><i class='fas fa-user-alt'></i>Login</button></a>
+        </div>
+        <div class="col-sm-3">
+            <a href="/users/logout"><button id="logout"><i class='fas fa-user-alt'></i>Logout</button></a>
+        </div>
+    </div>
+
+    <p id="space"></p><!----------for spacing------------------------------------>
+
+
+<!----------------CAROUSEL--------------------------------------------------------------------------->
+<div id="car" class="carousel slide" data-ride="carousel">
+  <ul class="carousel-indicators">
+    <li data-target="#car" data-slide-to="0" class="active"></li>
+    <li data-target="#car" data-slide-to="1"></li>
+    <li data-target="#dcar" data-slide-to="2"></li>
+  </ul>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/images/carousel2.jpg" height="300">
+      <div class="carousel-caption">
+        <h3>Welcome to Jaljeevika</h3>
+        <p>WE ARE AT YOUR SERVICE</p>
+      </div>   
+    </div>
+    <div class="carousel-item">
+      <img src="/images/carousel1.jpg" height="300">
+      <div class="carousel-caption">
+        <h3>Welcome to Jaljeevika</h3>
+        <p>WE ARE AT YOUR SERVICE</p>
+      </div>   
+    </div>
+    <div class="carousel-item">
+      <img src="/images/carousel3.jpg" height="300"> 
+      <div class="carousel-caption">
+       <h3>Welcome to Jaljeevika</h3>
+        <p>WE ARE AT YOUR SERVICE</p>
+      </div>   
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#car" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#car" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+<!-----------------Main - BODY------------------------------------------------------------------------------------->
+
+<div class="row">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+ <p id="space"></p>
+      <div class="dropdown">
+     <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" style="margin-left: 20px">Category</button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item"  onclick="filterSelection('feed')">Feed</a>
+      <a class="dropdown-item"  onclick="filterSelection('healthcare')">HealthCare</a>
+      <a class="dropdown-item" onclick="filterSelection('aquacutureequipment')">Aquaculture Equipments</a>
+      <a class="dropdown-item"  onclick="filterSelection('toolkit')">Ornamental fish purpose Toolkit</a>
+    </div>
+     </div>
+     <!--------------search bar in header------------------------------------->
+     <form style="margin-left: 130px; margin-top:-38px;">
+              <div class="dropdown">
+              <input class="form-control" id="myInput" type="text" placeholder="Search.." data-toggle="dropdown" style="width:350px">
+              <ul class="dropdown-menu" style="width:300px">
+              <li style="display: none"><a onclick="filterSelection('2paddle')">2 PADDLE AERATOR</a></li>
+              <li style="display: none"><a onclick="filterSelection('4paddle')">4 PADDLE AERATOR</a></li>
+              <li style="display: none"><a onclick="filterSelection('Apple')">APPLE BIOTECHNOLOGIES</a></li>
+              <li style="display: none"><a onclick="filterSelection('Arun')">ARUN AQUCULTURE</a></li>
+              <li style="display: none"><a onclick="filterSelection('aquacutureequipment')">AQUACULTURE EQUIPMENTS</a></li>
+              <li style="display: none"><a onclick="filterSelection('BMR')">BMR INDUSTRIES PVT.LTD.</a></li>
+              <li style="display: none"><a onclick="filterSelection('Cargill')">CARGILL INDIA PVT. LTD.</a></li>
+              <li style="display: none"><a onclick="filterSelection('Doctor')">DOCTOR'S VET-PHARMA PVT.LTD.</a></li>
+              <li style="display: none"><a onclick="filterSelection('environps')">ENVIRON- PS</a></li>
+              <li style="display: none"><a onclick="filterSelection('ewosrapid')" >EWOS RAPID BOOST</a></li>
+              <li style="display: none"><a onclick="filterSelection('ewosultra')">EWOS ULTRA GROWER</a></li>
+              <li style="display: none"><a onclick="filterSelection('feed')">FEED</a></li>
+              <li style="display: none"><a onclick="filterSelection('fishcage')">FISH CAGE</a></li>
+              <li style="display: none"><a onclick="filterSelection('harvest1')">HARVEST 1</a></li>
+              <li style="display: none"><a onclick="filterSelection('harvests')">HARVEST 3S</a></li>
+              <li style="display: none"><a onclick="filterSelection('healthcare')">HEALTHCARE</a></li>
+              <li style="display: none"><a onclick="filterSelection('madover')">MADOVER AQ. & WATER ARTS PVT.LTD.</a></li>
+              <li style="display: none"><a onclick="filterSelection('mudpump')">MUD PUMP</a></li>
+              <li style="display: none"><a onclick="filterSelection('toolkit')">ORNAMENTAL FISH PURPOSE TOOLKIT</a></li>
+              <li style="display: none"><a onclick="filterSelection('prosense')">PRO-SENSE</a></li>
+              <li style="display: none"><a onclick="filterSelection('residentalaq')">RESIDENTAL AQUARIUM</a></li>
+              <li style="display: none"><a onclick="filterSelection('SRR')">SRR AQUA SUPPLIERS</a></li>
+              <li style="display: none"><a onclick="filterSelection('stonner')">STONNER</a></li>
+              <li style="display: none"><a onclick="filterSelection('virodol')">VIRODOL</a></li>
+              </ul>
+              </div>
+       </form>
+</div><div class="col-sm-3"></div>
+</div>
+
+
+
+
+<p id="space"></p>
+<div class="row">
+
+<!------------------DROPDOWN FOR COMPANIES------------------------------------------------------------------->
+<div class="col-sm-4">
+<button type="button" class="btn btn-success btn-lg" id="comp">COMPANY</button>
+ <ul class="list-group" id="comp_list">
+    <li class="list-group-item" onclick="filterSelection('BMR')" style="height:70px">BMR Industries Pvt.Ltd.</li>
+    <li class="list-group-item" onclick="filterSelection('Cargill')" style="height:70px">Cargill India Pvt. Ltd.</li>
+    <li class="list-group-item" onclick="filterSelection('Doctor')" style="height:70px">Doctor's Vet -Pharma Pvt.Ltd.</li>
+    <li class="list-group-item" onclick="filterSelection('Apple')" style="height:70px">APPLE Biotechnologies</li>
+    <li class="list-group-item" onclick="filterSelection('SRR')" style="height:70px">SRR AQUA SUPPLIERS</li>
+    <li class="list-group-item" onclick="filterSelection('Arun')" style="height:70px">ARUN AQUCULTURE</li>
+    <li class="list-group-item" onclick="filterSelection('Aquarium')" style="height:70px">MadOverFish Aquarium & Water Arts Pvt.ltd</li>
+   </ul>
+   <p id="space3"></p>
+</div>
+
+<!--------------------PRODUCTS----------------------------------------------------------------------------------------->
+<div class="col-sm-8">
+<div class="main">
+<div class="row" id="row">
+
+<!-----------------------------product1------------------------------------->
+  <div class="column BMR feed 1 harvest1">
+    <div class="content">
+     <a href="/products"> <img src="/images/harvest1.png" style="width:100%"  id="p1"></a>
+       <div class="modal fade" id="myModal">
+       <div class="modal-dialog modal-dialog-centered modal-md ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">PRODUCT DETAILS</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+         <div class="row">
+          <div class="col-sm-4"><img src="/images/harvest1.png" style="width:180px;height:180px"><center><button type="button" class="btn btn-success btn-sm">Message Vendor</button></center></div>
+          <div class="col-sm-8">
+            <b>Product: HARVEST 1</b><br>
+            <b>Company Name</b>: BMR Group<br>
+            <b>Category</b>: Feed(crumble)<br>
+            <b>MRP:</b> Rs.2234.00/25Kg<br>
+            <b>Vendor Name:</b> ABC<br>
+            <b>Vendor's Location:</b> ABC<br>
+             <b>Description:</b><br>
+             Formulated with balanced nutritional values for shrimp health.
+          </div>
+         </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+       </div>
+    </div>
+  </div>
+      <h4><center>HARVEST 1</center></h4>
+      <p><center>BMR INDUSTRIES PVT.LTD.</center></p>
+    </div>
+  </div>
+
+
+
+<!------------------------------product2------------------------------------------------->
+  <div class="column BMR feed 2 harvests">
+    <div class="content">
+    <img src="/images/harvest3s.jpg" style="width:100%" id="p2" data-toggle="modal" data-target="#myModal2">
+    <div class="modal fade" id="myModal2">
+       <div class="modal-dialog modal-dialog-centered modal-md ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">PRODUCT DETAILS</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+         <div class="row">
+          <div class="col-sm-4"><img src="/images/harvest3s.jpg" style="width:180px;height:180px"><center><button type="button" class="btn btn-success btn-sm">Message Vendor</button></center></div>
+          <div class="col-sm-8">
+            <b>Product: HARVEST 3S</b><br>
+            <b>Company Name</b>: BMR Group<br>
+            <b>Category</b>: Feed(mini pellete)<br>
+            <b>MRP:</b> Rs.2270.00/25Kg<br>
+            <b>Vendor Name:</b> ABC<br>
+            <b>Vendor's Location:</b> ABC<br>
+             <b>Description:</b><br>
+             Formulated with balanced nutritional values for shrimp health.
+          </div>
+         </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+       </div>
+    </div>
+  </div>
+      <h4><center>HARVEST 3S</center></h4>
+      <p><center>BMR INDUSTRIES PVT.LTD.</center></p>
+    </div>
+  </div>
+
+
+
+
+<!---------------------------product 3--------------------------------------------------------->
+  <div class="column Cargill feed 1 ewosrapid">
+    <div class="content">
+   <center> <img src="/images/ewosrapid.jpg" style="width:70%" id="p3" data-toggle="modal" data-target="#myModal3"></center>
+    <div class="modal fade" id="myModal3">
+       <div class="modal-dialog modal-dialog-centered modal-md ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">PRODUCT DETAILS</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+         <div class="row">
+          <div class="col-sm-4"><img src="/images/ewosrapid.jpg" style="width:140px;height:180px"><center><button type="button" class="btn btn-success btn-sm">Message Vendor</button></center></div>
+          <div class="col-sm-8">
+            <b>Product: EWOS RAPID BOOST</b><br>
+            <b>Company Name</b>:Cargill Group<br>
+            <b>Category</b>: Feed<br>
+            <b>MRP:</b> Rs.2598.00/Bag<br>
+            <b>Vendor Name:</b> ABC<br>
+            <b>Vendor's Location:</b> ABC<br>
+             <b>Description:</b><br>
+               Improves gut health & Supports water quality.<br>
+               Minimum Order Quantity: 02 Bag                                                                 
+          </div>
+         </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+       </div>
+    </div>
+  </div>
+    <h4><center>EWOS RAPID BOOST</center></h4>
+      <p><center>CARGILL INDIA PVT. LTD.</center></p>
+    </div>
+  </div>
+
+
+
+
+
+<!----------------------------------product 4------------------------------------------------------------>
+  
+  <div class="column Cargill feed 2 ewosultra">
+    <div class="content">
+      <center><img src="/images/ewos1.jpg" style="width:70%" id="p4" data-toggle="modal" data-target="#myModal4"></center>
+     <div class="modal fade" id="myModal4">
+       <div class="modal-dialog modal-dialog-centered modal-md ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">PRODUCT DETAILS</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+         <div class="row">
+          <div class="col-sm-4"><img src="/images/ewos1.jpg" style="width:140px;height:160px"><center><button type="button" class="btn btn-success btn-sm">Message Vendor</button></center></div>
+          <div class="col-sm-8">
+            <b>Product:EWOS ULTRA GROWER</b><br>
+            <b>Company Name</b>:Cargill Group<br>
+            <b>Category</b>: Feed<br>
+            <b>MRP:</b> Rs.2204.00/Bag<br>
+            <b>Vendor Name:</b> ABC<br>
+            <b>Vendor's Location:</b> ABC<br>
+             <b>Description:</b><br>
+            High protein& high energy  <br>Minimum Order Quantity :02 Bag
+
+          </div>
+         </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+       </div>
+    </div>
+  </div>
+
+      <h4><center>EWOS ULTRA GROWER</center></h4>
+      <p><center>CARGILL INDIA PVT. LTD.</center></p>
+    </div>
+  </div>
+
+
+
+  <!--------------------------product 5------------------------------------------------------------------>
+  <div class="column Doctor healthcare 1 virodol">
+    <div class="content">
+    <img src="/images/virodol.jpg" style="width:100%" id="p5" data-toggle="modal" data-target="#myModal5">
+ <div class="modal fade" id="myModal5">
+       <div class="modal-dialog modal-dialog-centered modal-md ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">PRODUCT DETAILS</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+         <div class="row">
+          <div class="col-sm-4"><img src="/images/virodol.jpg" style="width:180px;height:180px"><center><button type="button" class="btn btn-success btn-sm">Message Vendor</button></center></div>
+          <div class="col-sm-8">
+            <b>Product: VIRODOL</b><br>
+            <b>Company Name</b>:Doctor's Vet-Pharma Pvt.Ltd.<br>
+            <b>Category</b>: Health Care<br>
+            <b>MRP:</b> N/A<br>
+            <b>Vendor Name:</b> ABC<br>
+            <b>Vendor's Location:</b> ABC<br>
+             <b>Description:</b><br>
+             Virodol is an ideal dfisinfectant to use aqualture,fishculture&processing unit.
+          </div>
+         </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+       </div>
+    </div>
+  </div>
+      <h4><center>VIRODOL</center></h4>
+      <p><center>DOCTOR'S VET-PHARMA PVT.LTD.</center></p>
+    </div>
+  </div>
+
+
+
+  <!--------------------------product 6----------------------------------------------------------------->
+  <div class="column Doctor healthcare 1 prosense">
+    <div class="content">
+   <center> <img src="/images/pro.jpg" style="width:80%" id="p6" data-toggle="modal" data-target="#myModal6"></center>
+
+    <div class="modal fade" id="myModal6">
+       <div class="modal-dialog modal-dialog-centered modal-md ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">PRODUCT DETAILS</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+         <div class="row">
+          <div class="col-sm-4"><img src="/images/pro.jpg" style="width:150px;height:180px"><center><button type="button" class="btn btn-success btn-sm">Message Vendor</button></center></div>
+          <div class="col-sm-8">
+            <b>Product: Pro-sense(Probiotics)</b><br>
+            <b>Company Name</b>:Doctor's Vet -Pharma Pvt.Ltd.<br>
+            <b>Category</b>:Health care<br>
+            <b>MRP:</b>N/A<br>
+            <b>Vendor Name:</b> ABC<br>
+            <b>Vendor's Location:</b> ABC<br>
+             <b>Description:</b><br>
+             Pro-sense water and soil probbiotics for shrimp/fish /prawn, is a unique live bacterila consortium.
+          </div>
+         </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+       </div>
+    </div>
+  </div>
+      <h4><center>PRO-SENSE</center></h4>
+      <p><center>DOCTOR'S VET-PHARMA PVT.LTD.</center></p>
+    </div>
+  </div>
+
+
+<!-----------------------------product 7------------------------------------------------------------->
+  <div class="column Apple healthcare 2 environps">
+    <div class="content">
+     <center> <img src="/images/stonner.jpg" style="width:80%" id="p7" data-toggle="modal" data-target="#myModal7"></center>
+     <div class="modal fade" id="myModal7">
+       <div class="modal-dialog modal-dialog-centered modal-md ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">PRODUCT DETAILS</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+         <div class="row">
+          <div class="col-sm-4"><img src="/images/environ.jpg" style="width:140px;height:180px"><center><button type="button" class="btn btn-success btn-sm">Message Vendor</button></center></div>
+          <div class="col-sm-8">
+            <b>Product: ENVIRON- PS</b><br>
+            <b>Company Name</b>: APPLE Biotechnologies<br>
+            <b>Category</b>: Health care<br>
+            <b>MRP:</b> Rs.2270.00<br>
+            <b>Vendor Name:</b> ABC<br>
+            <b>Vendor's Location:</b> ABC<br>
+             <b>Description:</b><br>
+             Decomposes and decreases the ammonia and H2S in the water column and in soil.
+          </div>
+         </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+       </div>
+    </div>
+  </div>
+      <h4><center>ENVIRON- PS</center></h4>
+      <p><center>APPLE BIOTECHNOLOGIES</center></p>
+    </div>
+  </div>
+
+  <!--------------------------product 8----------------------------------------------------------------->
+  <div class="column Apple healthcare 3 stonner">
+    <div class="content">
+    <img src="/images/environ.jpg" style="width:100%" id="p8" data-toggle="modal" data-target="#myModal8">
+    <div class="modal fade" id="myModal8">
+       <div class="modal-dialog modal-dialog-centered modal-md ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">PRODUCT DETAILS</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+         <div class="row">
+          <div class="col-sm-4"><img src="/images/stonner.jpg" style="width:130px;height:180px"><center><button type="button" class="btn btn-success btn-sm">Message Vendor</button></center></div>
+          <div class="col-sm-8">
+            <b>Product: STONNER</b><br>
+            <b>Company Name</b>: APPLE Biotechnologies<br>
+            <b>Category</b>: Health care<br>
+            <b>MRP:</b> Rs.2270.00<br>
+            <b>Vendor Name:</b> ABC<br>
+            <b>Vendor's Location:</b> ABC<br>
+             <b>Description:</b><br>
+            Cleans Pond bottom, absorbs Bacteria, Suspended Solids, and Waste Dirty Matter.
+          </div>
+         </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+       </div>
+    </div>
+  </div>
+      <h4><center>STONNER</center></h4>
+      <p><center>APPLE BIOTECHNOLOGIES</center></p>
+    </div>
+  </div>
+
+
+  <!---------------------------product 9-------------------------------------------------------------------->
+  <div class="column SRR aquacutureequipment 1 4paddle">
+    <div class="content">
+    <img src="/images/4paddle.jpg" style="width:100%" id="p9" data-toggle="modal" data-target="#myModal9">
+    <div class="modal fade" id="myModal9">
+       <div class="modal-dialog modal-dialog-centered modal-md ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">PRODUCT DETAILS</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+         <div class="row">
+          <div class="col-sm-4"><img src="/images/4paddle.jpg" style="width:140px;height:180px"><center><button type="button" class="btn btn-success btn-sm">Message Vendor</button></center></div>
+          <div class="col-sm-8">
+            <b>Product: 4 Pddle wheel Areator</b><br>
+            <b>Company Name</b>: SRR AQUA SUPPLIERS<br>
+            <b>Category</b>: Aquaculture Equipments<br>
+            <b>MRP:</b> Rs.2270.00<br>
+            <b>Vendor Name:</b> ABC<br>
+            <b>Vendor's Location:</b> ABC<br>
+             <b>Description:</b><br>
+             High Oxygen Generation & Excellent Water Current
+          </div>
+         </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+       </div>
+    </div>
+  </div>
+      <h4><center>4 PADDLE AERATOR</center></h4>
+      <p><center>SRR AQUA SUPPLIERS</center></p>
+    </div>
+  </div>
+
+
+  <!--------------------------product 10------------------------------------------------------------------------>
+  <div class="column SRR aquacutureequipment 2 fishcage">
+    <div class="content">
+    <img src="/images/cage.jpg" style="width:100%" id="p10" data-toggle="modal" data-target="#myModal10">
+    <div class="modal fade" id="myModal10">
+       <div class="modal-dialog modal-dialog-centered modal-md ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">PRODUCT DETAILS</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+         <div class="row">
+          <div class="col-sm-4"><img src="/images/cage.jpg" style="width:140px;height:180px"><center><button type="button" class="btn btn-success btn-sm">Message Vendor</button></center></div>
+          <div class="col-sm-8">
+            <b>Product: Fish Cage</b><br>
+            <b>Company Name</b>: ARUN AQUCULTURE<br>
+            <b>Category</b>: Aquaculture Equipments<br>
+            <b>MRP:</b> Rs.2270.00<br>
+            <b>Vendor Name:</b> ABC<br>
+            <b>Vendor's Location:</b> ABC<br>
+             <b>Description:</b><br>
+             Environmental Friendly
+          </div>
+         </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+       </div>
+    </div>
+  </div>
+      <h4><center>FISH CAGE</center></h4>
+      <p><center>SRR AQUA SUPPLIERS</center></p>
+    </div>
+  </div>
+
+
+
+  <!----------------------------------product11----------------------------------------------------------------->
+  <div class="column Arun aquacutureequipment 2 2paddle">
+    <div class="content">
+    <img src="/images/2paddle.jpg" style="width:100%" id="p11" data-toggle="modal" data-target="#myModal11">
+    <div class="modal fade" id="myModal11">
+       <div class="modal-dialog modal-dialog-centered modal-md ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">PRODUCT DETAILS</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+         <div class="row">
+          <div class="col-sm-4"><img src="/images/2paddle.jpg" style="width:180px;height:180px"><center><button type="button" class="btn btn-success btn-sm">Message Vendor</button></center></div>
+          <div class="col-sm-8">
+            <b>Product: 2 Paddle Wheel Aerator</b><br>
+            <b>Company Name</b>: ARUN AQUCULTURE<br>
+            <b>Category</b>: Aquaculture Equipments <br>
+            <b>MRP:</b> Rs.2270.00<br>
+            <b>Vendor Name:</b> ABC<br>
+            <b>Vendor's Location:</b> ABC<br>
+             <b>Description:</b><br>
+             Best Aeration With High Water Flow Range.
+          </div>
+         </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+       </div>
+    </div>
+  </div>
+      <h4><center>2 PADDLE AERATOR</center></h4>
+      <p><center>ARUN AQUCULTURE</center></p>
+    </div>
+  </div>
+
+
+  <!--------------------------------product12---------------------------------------------------------------------->
+  <div class="column Arun aquacutureequipment 2 mudpump">
+    <div class="content">
+    <img src="/images/mudpump.jpg" style="width:100%" id="p12" data-toggle="modal" data-target="#myModal12">
+    <div class="modal fade" id="myModal12">
+       <div class="modal-dialog modal-dialog-centered modal-md ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">PRODUCT DETAILS</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+         <div class="row">
+          <div class="col-sm-4"><img src="/images/mudpump.jpg" style="width:180px;height:180px"><center><button type="button" class="btn btn-success btn-sm">Message Vendor</button></center></div>
+          <div class="col-sm-8">
+            <b>Product: MUD PUMP</b><br>
+            <b>Company Name</b>: ARUN AQUCULTURE<br>
+            <b>Category</b>: Aquaculture Equipments<br>
+            <b>MRP:</b> Rs.2270.00<br>
+            <b>Vendor Name:</b> ABC<br>
+            <b>Vendor's Location:</b> ABC<br>
+             <b>Description:</b><br>
+             These pumps are manufactured using quality-approved raw material sourced from authentic suppliers as per the international norms and standards.
+          </div>
+         </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+       </div>
+    </div>
+  </div>
+      <h4><center>MUD PUMP</center></h4>
+      <p><center>ARUN AQUCULTURE</center></p>
+    </div>
+  </div>
+
+
+
+  <!------------------------------product13---------------------------------------------------------------------------->
+  <div class="column madover toolkit 1 residentalaq">
+    <div class="content">
+    <img src="/images/aquarium.png" style="width:100%" id="p13" data-toggle="modal" data-target="#myModal13">
+    <div class="modal fade" id="myModal13">
+       <div class="modal-dialog modal-dialog-centered modal-md ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">PRODUCT DETAILS</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+         <div class="row">
+          <div class="col-sm-4"><img src="/images/aquarium.png" style="width:140px;height:180px"><center><button type="button" class="btn btn-success btn-sm">Message Vendor</button></center></div>
+          <div class="col-sm-8">
+            <b>Product: Residental Aquarium</b><br>
+            <b>Company Name</b>: MadOverFish Aquarium & Water Arts Pvt.ltd<br>
+            <b>Category</b>: Ornamental fish purpose Toolkit<br>
+            <b>MRP:</b> Rs.2270.00<br>
+            <b>Vendor Name:</b> ABC<br>
+            <b>Vendor's Location:</b> ABC<br>
+             <b>Description:</b><br>
+             Acrylic aquarium tanks
+          </div>
+         </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+       </div>
+    </div>
+  </div>
+      <h4><center>RESIDENTAL AQUARIUM</center></h4>
+      <p>MADOVER AQ. & WATER ARTS PVT.LTD.</p>
+    </div>
+  </div>
+  </div>
+
+</div>  <!--------div id == main ---------->
+</div>
+</div><!-----row-1st-------->
+<!------------------------------------------------------------------------------->
+</div><!----container--------->
+
+
+<!-----------------------pagination------------------------------------------------>
+<div class="row">
+  <div class="col-sm-6"></div>
+  <div class="col-sm-6">
+  <center><ul class="pagination">
+    <li class="page-item"><a class="page-link"  onclick="filterSelection('1')" >1</a></li>
+    <li class="page-item"><a class="page-link"  onclick="filterSelection('2')" >2</a></li>
+    <li class="page-item"><a class="page-link"  onclick="filterSelection('3')" >3</a></li>
+    <li class="page-item disabled"><a class="page-link"  onclick="filterSelection('4')" >4</a></li>
+    <li class="page-item disabled"><a class="page-link"  onclick="filterSelection('5')" >5</a></li>
+  </ul></center></div>
+</div><hr>
+<!-------------------------------------------------------------------------------------->
+
+
+<!-----------------------------About us ------------------------------------------------->
+
+<div class="row" id="aboutus" style="background-image: url('/images/b2.jpeg')">
+  <div class="col-sm-1">
+  </div>
+  <div class="col-sm-10">
+ <center><div id="heading"><b>ABOUT US</b></div></center>
+    <center><div id="heading" style="font-size: 30px"><b>OUR VISSION</b></div>
+   <b> "Enhancing human capability and ensuring wellbeing through knowledge transfer, empowerment and collective process."</b>
+    <div id="heading" style="font-size: 30px"><b>OUR AIM</b></div>
+    <b>"Reduce vulnerability, build resilience and empower the community through strengthening aquatic-based livelihood opportunities."</b>
+   <div id="heading" style="font-size: 25px"><b> WHO ARE WE?</b></div></center>
+   <div class="row">
+    <div class="col-sm-6">
+   <div id="about"> Centre for Aquatic livelihood Jaljeevika is a registered non-profit organisation under section (8) company act.
+    We started our journey in the year 2013 to promote livelihood potential in rural India through interventions in aquatic livelihood sector.
+    We are committed to the promotion of aquatic livelihood through better resource management, institution building, technology transfer, access to credit, inputs, markets and support in developing end to end value chains towards enhancing livelihood opportunities, securing food and nutritional security in rural India.<br><br>
+   <i class="far fa-calendar-check"></i>&nbsp &nbsp One of the founder members to establish a National platform for small scale &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  fish worker.<br>
+   <i class="far fa-calendar-check" ></i>&nbsp &nbsp Transforming as Open source fisheries platform to promote numbers of social &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  enterprises around the fisheries value chain.<br>
+   <i class="far fa-calendar-check"></i>&nbsp &nbsp  IT-based support services to ensure link better performing fish farmers &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp through credit agency</i><br>
+   <i class="far fa-calendar-check"></i>&nbsp &nbsp Enable farmers to learn affordable and sustainable aquatic farming practices.<br><br>
+   <i class="far fa-calendar-check"></i>&nbsp &nbsp  Setting up sectoral development AquaFund to leverage the existing potential &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp of CSR,Private sector,etc.</div></div>
+   <div class="col-sm-6"><p id="space2"></p><img src="/images/jaljeevak.jpg" style="height:300px;width:600px"></div>
+   </div>
+
+  </div>
+  <div class="col-sm-1">
+  </div>
+</div><!------------ROW--------------->
+
+<!-------------------------------------------------------------------------------------------->
+
+<!-------------------------------------------------------------------------------------------->
+
+<!------------------------------------------------------------------------------------------>
+<script>
+    
+    $(document).ready(function(){
+        $("#comp").click(function(){
+        $("#comp_list").slideToggle("slow");
+        });
+    });
+    
+    
+    
+    //For search bar filtering
+    $(document).ready(function(){
+        $("#myInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $(".dropdown-menu li").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+        });
+        });
+    
+    //For dropdown items selection
+    $(document).ready(function()
+        {
+        $(".dropdown-menu li").click(function()
+        {
+        var t=$(this).val();
+        $("#myInput").val($(this).text());
+        });
+        });
+    
+    
+    
+    //JS CODE FOR PRODUCT FILTERING (MOST IMPORTANT)
+    filterSelection("allproduct")
+    function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("column");
+        if (c == "allproduct") c = "";
+        for (i = 0; i < x.length; i++) {
+        w3RemoveClass(x[i], "show");
+        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        }
+    }
+    
+    function w3AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+        if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+        }
+    }
+    
+    function w3RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+        while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);     
+        }
+        }
+        element.className = arr1.join(" ");
+    }
+    //until here
+  
+</script>
+</body>
+</html>
