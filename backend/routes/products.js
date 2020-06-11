@@ -62,7 +62,7 @@ Product.find( {category: category},(data)=>{
 
 }
     
-    res.render('searchpage',{})
+    res.render('/',{})
 
 
 
