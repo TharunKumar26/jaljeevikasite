@@ -9,6 +9,65 @@ router.route('/').get((req, res) => {
         .catch(err => res.status(400).json('Error: ' + err));
 });
 
+
+
+router.get('/search',(req, res)=>{
+    let products =[]
+    
+    if (req.query.location !=''){
+        const userlocation = req.user.location;
+       
+
+        Product.find( {vendorlocation: userlocation},(data)=>{
+            res.render('',{products : products })
+            
+        })
+        
+    }
+    if (req.query.price!=''){
+        
+       
+    if (req.query.price == "high"){
+        Product.find().sort({price:-1})
+.then((products) => {res.render('/', {products :products})
+    })
+
+
+    }
+    else {
+        Product.find().sort({price:1})
+        .then((products) => {res.render('/', {products : products})
+    })
+            
+    }
+}
+    
+    if(req.query.category!='')
+    {
+    const category = req.query.cat
+    Product.find( {category: category}, (data)=>{
+        res.render('/',{products : products })
+    })
+
+}
+if (req.query.category!='')
+{
+const category = req.query.brand
+Product.find( {category: category},(data)=>{
+    res.render('/',{products : products })
+})
+
+
+
+
+}
+    
+    res.render('searchpage',{})
+
+
+
+})
+
 // locolhost:5000/products/add
 router.route('/add').post((req, res) => {
     const name = req.body.name;

@@ -1,2 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+    
+
 <button><a href="/vendor/logout"><button id="logout"><i class='fas fa-user-alt'></i>Logout</button></a>
 </button>
+
+
+<form id="messageform" method="POST" action="vendor/message">
+
+    <label for="Msg">Message</label><input name="message" type="text"/>
+    <input type="submit">
+
+</form>
+<div id="hi">Hello</div>
+<%- include ("./partials/enquire") %>
+		
+<div id="hey">Hey
+</div>
+
+</body>
+</html>
+<script>
+    $('#messageform').submit(function (e) {
+
+    e.preventDefault();
+    console.log($.ajax)
+    var data = $(this).serialize()
+    console.log(data)
+    $.ajax({
+        url: '/vendor/message',
+        data: data,
+        type: 'POST',
+        success: function(elem){
+
+            $('#hi').html(data)
+        }
+    });
+});</script>

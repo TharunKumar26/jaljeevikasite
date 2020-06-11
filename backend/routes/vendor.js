@@ -12,6 +12,7 @@ var http = require('http')
 
 const Vendor = require('../models/Vendor');
 const contact = require('../models/Vendorcontact')
+const Message = require('../models/messages')
 
 const { forwardAuthenticated } = require('../config/auth');
 
@@ -21,6 +22,9 @@ router.get('/login', forwardAuthenticated, (req, res) =>{
 
 res.render('vendorlogin')
 });
+router.get('/login',()=>{
+    res.send("s")
+})
 router.get('/contact',(req,res)=>{
     res.render('vendorcontact')
 })
@@ -36,9 +40,37 @@ router.get('/',(req,res) =>{
 })
 
 router.get('/dashboard', (req, res)=>{
-    res.render('Vendordashboard')
+ 
+    if (req.isAuthenticated()) {res.render('Vendordashboard')}
+    else {res.render('vendorlogin')}
 
 })
+
+router.post('/message',(req, res)=>{
+   
+    const message = req.body.message;
+    const customerid = req.user._id;
+    const vendorid = "test";
+
+    //message validations
+
+    const newmessage =new Message({
+        customerid,
+        vendorid,
+        message
+    })
+
+    
+    if(newmessage.save())
+    {   
+        elem = "hey"
+        res.json({title: 'newTitle'})
+    }
+    //Message.find().then(val => console.log(val))
+  
+    
+})
+ 
 
 
 router.post('/contact',(req,res )=>{
@@ -128,7 +160,16 @@ router.post('/register', (req, res) => {
         errors.push({ msg: 'Passwords do not match'});
     }
 
+    if(phone.length !=10){
+        errors.push({ msg: 'Phone number is incorrect'});
     
+
+        }
+    if(pincode.length !=6){
+        errors.push({ msg: 'Pin code is incorrect'});
+    
+        
+    }
     
     // Check password length
     /*
@@ -249,6 +290,67 @@ router.post('/register', (req, res) => {
 
 // Login
 
+Product = require('../models/product.model')
+router.get('/search',(req, res)=>{
+    query = req.params.val;
+    if (req.query.location !=''){
+        //const userlocation = req.user.location;
+        userlocation = "Jaipur"
+
+        Product.find( {vendorlocation: userlocation},(data)=>{
+            res.render('',{products : products })
+            
+        })
+        
+    }
+    if (req.query.price){
+        const result = []
+       
+    if (req.query.price == "high"){
+        Product.find().sort({price:-1})
+.then((products) => {res.render('', {products :products})
+    })
+
+
+    }
+    else {
+        Product.find().sort({price:1})
+        .then(products => console.log(products))
+            
+    }
+}
+    
+    if(req.query.category!='')
+    {
+    const category = req.query.cat
+    Product.find( {category: category}, (data)=>{
+        res.render('',{products : products })
+    })
+
+}
+if (req.query.category!='')
+{
+const category = req.query.brand
+Product.find( {category: category},(data)=>{
+    res.render('',{products : products })
+})
+
+
+
+
+}
+    
+    res.render('vendorhome')
+
+
+
+})
+
+router.get('/filter',(req,res)=>{
+
+
+})
+
 
 router.post('/login', (req, res, next) => {
     passport.authenticate('local', {
@@ -256,6 +358,7 @@ router.post('/login', (req, res, next) => {
       failureRedirect: '/vendor/login',
       failureFlash: true
     })(req, res, next);
+
 });
   
   // Logout
