@@ -5,7 +5,7 @@ const EnquerySchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  vendorid: {
+  Vendorid: {
     type: String,
     required: true
   },
@@ -13,13 +13,15 @@ const EnquerySchema = new mongoose.Schema({
     type: String,
     required: true
   },
- 
+  file:{
+      type: String,
+  },
   date: {
     type: Date,
     default: Date.now
   }
 });
 
-const Messages = mongoose.model('Enquiry', EnquerySchema);
+const User = mongoose.model('User', UserSchema);
 
-module.exports = Messages;
+module.exports = User;

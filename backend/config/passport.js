@@ -2,13 +2,13 @@ const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcryptjs');
 
 // Load User model
-const Vendor = require('../models/Vendor');
+const User = require('../models/user.model');
 
 module.exports = function(passport) {
   passport.use(
     new LocalStrategy({ usernameField: 'email' }, (email, password, done) => {
       // Match user
-      Vendor.findOne({
+      User.findOne({
         email: email
       }).then(user => {
         if (!user) {
@@ -33,7 +33,7 @@ module.exports = function(passport) {
   });
 
   passport.deserializeUser(function(id, done) {
-    Vendor.findById(id, function(err, user) {
+    User.findById(id, function(err, user) {
       done(err, user);
     });
   });

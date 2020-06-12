@@ -2,12 +2,6 @@ const router = require('express').Router();
 let Product = require('../models/product.model');
 
 
-// locolhost:5000/products/
-router.route('/').get((req, res) => { 
-    Product.find()
-        .then(products => res.json(products))
-        .catch(err => res.status(400).json('Error: ' + err));
-});
 
 
 
@@ -51,22 +45,33 @@ router.get('/search',(req, res)=>{
 
 }
 if (req.query.category!='')
-{
+    {
 const category = req.query.brand
 Product.find( {category: category},(data)=>{
     res.render('/',{products : products })
 })
-
-
-
-
-}
+    }
     
-    res.render('searchpage',{})
+    res.render('/',{})
 
 
 
 })
+
+
+
+
+// locolhost:5000/products/
+router.route('/').get((req, res) => { 
+    /*Product.find()
+        .then(products => res.json(products))
+        .catch(err => res.status(400).json('Error: ' + err)); */
+    Product.find({}, function(err, data){
+        res.render('product.ejs', { 
+           product : data[0]
+        });
+    });
+});
 
 // locolhost:5000/products/add
 router.route('/add').post((req, res) => {
@@ -77,6 +82,7 @@ router.route('/add').post((req, res) => {
     const imgurl = req.body.imgurl;
     const category = req.body.category;
     const brand = req.body.brand;
+    const vendorlocation = req.body.vendorlocation;
 
     const newProduct = new Product({
         name,
@@ -86,6 +92,7 @@ router.route('/add').post((req, res) => {
         imgurl,
         category,
         brand,
+        vendorlocation
     });
 
     newProduct.save()

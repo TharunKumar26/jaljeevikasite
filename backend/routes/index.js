@@ -12,4 +12,7 @@ router.get('/dashboard', ensureAuthenticated, (req, res) =>
   })
 );
 
+// Products Page
+router.get('/product', ensureAuthenticated, (req, res) => res.render('product'));
+
 module.exports = router;

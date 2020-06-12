@@ -8,8 +8,9 @@ const productSchema = new Schema({
     price: {type: Number, required: true},
     vendorname: {type: String, required: true},
     imgurl: {type: String, required: true},
-    category: {type: String},
-    brand: {type: String},
+    category: {type: String, required: true},
+    brand: {type: String, required: true},
+    vendorlocation:{type: String, required: true},
 }, {
     timestamps: true,
 });
