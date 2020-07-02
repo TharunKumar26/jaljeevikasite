@@ -1,0 +1,32 @@
+body{ 
+background: url("/images/back1.jpg") ; 
+background-repeat: no-repeat;
+}
+
+#a
+{
+text-align: center;
+font-family:Brush Script MT;
+font-size: 100;
+color:#FFFFFF;
+margin-top: 80px;
+}
+
+
+.ghost-button {
+display: inline-block;
+width: 180px;
+padding: 8px;
+color: #fff;
+border: 1px solid #fff;
+text-align: center;
+outline: none;
+text-decoration: none;
+border: 3px solid #fff;
+}
+
+.ghost-button:hover,
+.ghost-button:active {
+background-color: #fff;
+color: #000;
+}

@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 const EnquerySchema = new mongoose.Schema({
-  customerid: {
+  sender: {
     type: String,
     required: true
   },
-  Vendorid: {
+  receiver: {
     type: String,
     required: true
   },
@@ -13,15 +13,16 @@ const EnquerySchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  file:{
-      type: String,
+  seen:{
+    type: Boolean,
   },
+  
   date: {
     type: Date,
     default: Date.now
   }
 });
 
-const User = mongoose.model('User', UserSchema);
+const messages = mongoose.model('EnquirySchema', EnquerySchema);
 
-module.exports = User;
+module.exports = messages;

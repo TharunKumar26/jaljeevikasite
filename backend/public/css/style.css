@@ -1,160 +1,193 @@
-
- #logo{
-  height:100px;
-  width:250px;
-  margin-top:30px;
-  padding-left: 70px;
-
+#logo{
+  height:150px;
+  width:200px;
+  margin-top:10px;
+  padding-left: 20px;
+  padding-bottom: 30px;
  }
-
+ 
 .btn-default:hover {
-    border-bottom: 3px solid green;
+    border-bottom: 5px solid rgb(40, 104, 187);
  }
-
-
+ 
+ 
 #logout
  {
   height:50px;
-  width:100px;
-  margin-top:30px;
+  width:170px;
+  margin-top:20px;
+ 
 }
-
+ 
 #login{
   height:50px;
   width:100px;
   margin-top:30px;
 }
-
+ 
 #home{
     margin-top: 30px;
      margin-left: 10px;
 }
-
+ 
 #about{
      margin-top: 30px;
      margin-left: 30px;
 }
-
+ 
 #contact{
      margin-top: 30px;
      margin-left: 30px;
 }
-
-
+ 
+ 
 #services{
     margin-top: 30px;
     margin-left: 30px
 }
-
+#meet{
+  margin-top: 30px;
+  margin-left: 30px;
+}
+ 
 .carousel-inner img {
     width: 100%;
-    
+ 
   }
-
+ 
   #space{
     margin-top:30px; 
   }
-
+ 
   #space2{
     margin-top:100px; 
   }
-
+ 
   #space3
   {
     margin-top:120px; 
   }
-
-#comp{
-    margin-left:70px;
-    width:350px;
+ 
+ 
+ 
+ 
+ 
+.content{
+  height:360px;
+  width:220px;
+  border-style:solid;
+  border-width: 1px;
+ 
 }
-#comp_list{
-   margin-left:70px;
-   width:350px;
-   padding: 8px;
-   text-align: center;
-
-}
-
+ 
 #p1,#p2,#p3,#p4,#p5,#p6,#p7,#p8,#p9,#p10,#p11,#p12,#p13
 {
   height:200px;
+ 
  }
-
+ 
  /* Mainly for products above pagination */
-
+ 
 * {
   box-sizing: border-box;
 }
-
+ 
 body {
   background-color: #f1f1f1;
   padding: 20px;
   font-family: Arial;
 }
-
+ 
 .main {
   max-width: 1000px;
   margin: auto;
 }
-
+ 
 h1 {
   font-size: 50px;
   word-break: break-all;
 }
-
+ 
 #row {
   margin: 10px -16px;
 }
-
+ 
 #row,
 #row > .column {
   padding: 8px;
 }
-
+ 
 .column {
   float: left;
-  width: 33.33%;
+  width: 25.00%;
   display: none; 
 }
-
-
+ 
+ 
 #row:after {
   content: "";
   display: table;
   clear: both;
 }
-
-
+ 
+ 
 .content {
   background-color: white;
   padding: 10px;
 }
-
+ 
 .show {
   display: block;
 }
 /* till here    */
-
+ 
 .list-group-item:hover {
   background-color: #ddd;
 }
-
+ 
 #heading{
-
+ 
   font-family:garamond;
   font-size: 50px;
   color:green;
 }
-
+ 
 #about{
   font-size: 16px;
 }
-
+ 
 .far {
   font-size: 25px;
   color:green;
 }
-#aboutus{
-  background-image: url('images/b1.jpg');
+ 
+.ml1 {
+  font-weight: 500;
+  font-size: 2.5em;
 }
+ 
+.ml1 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+ 
+.ml1 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.1em;
+  padding-right: 0.05em;
+  padding-bottom: 0.15em;
+}
+ 
+.ml1 .line {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #fff;
+  transform-origin: 0 0;
+}
+ 
+.ml1 .line1 { top: 0; }
+.ml1 .line2 { bottom: 0; }

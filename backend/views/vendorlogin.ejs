@@ -11,7 +11,6 @@
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
 		}, false);
-
 		function hideURLbar() {
 			window.scrollTo(0, 1);
 		}
@@ -25,7 +24,7 @@
 </head>
 
 <body>
-	<h1>Jaljeevika Login Form </h1>
+	<h1>Vendor Login</h1>
 	<div class="ls-login box box--big">
 		<!-- form starts here -->
 		<%- include ("./partials/messages") %>
@@ -36,7 +35,7 @@
 				<input type="text" name="email" id="email" placeholder="Enter User Name" required="" />
 			</div>
 			<div class="agile-field-txt">
-				<label> password</label>
+				<label> Password</label>
 				<input type="password" name="password" id="password" placeholder="Enter Password" required="" id="myInput" />
 				<div class="agile_label">
 					<input id="check3" name="check3" type="checkbox" value="show password" onclick="myFunction()">
@@ -49,7 +48,7 @@
 			<!-- script for show password -->
 			<script>
 				function myFunction() {
-					var x = document.getElementById("myInput");
+					var x = document.getElementById("password");
 					if (x.type === "password") {
 						x.type = "text";
 					} else {

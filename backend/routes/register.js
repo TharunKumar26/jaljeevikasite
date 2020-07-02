@@ -3,11 +3,10 @@ let Product = require('../models/Vendorreg.model');
 
 // locolhost:5000/products/
 router.route('/').get((req, res) => { 
-    
-
+    res.send("<h1>Empty Route</h1>");
 });
 
-// locolhost:5000/products/add
+
 router.route('/register').post((req, res) => {
     const Name = req.body.name;
     const vendorname = req.body.vendorname
@@ -22,8 +21,8 @@ router.route('/register').post((req, res) => {
     const pincode = req.body.pincode;
 
     const emailexist = Vendor.findOne({"email" : email});
-    if (phoneexist) return res.status(400).send("Email already exists")
-    const emailexist = Vendor.findOne({"phone" : phone});
+    if (emailexist) return res.status(400).send("Email already exists")
+    const phoneexist = Vendor.findOne({"phone" : phone});
     if (phoneexist) return res.status(400).send("Email already exists")
     
     
@@ -42,12 +41,12 @@ router.route('/reset').get((req,res) =>{
     
 });
 
-router.route('/resetpassword').post((req, res) => {
+// router.route('/resetpassword').post((req, res) => {
     
-    gmail = 
-        .then(product => res.json(product))
-        .catch(err => res.status(400).json('Error: '+ err));
-});
+//     gmail = 
+//         .then(product => res.json(product))
+//         .catch(err => res.status(400).json('Error: '+ err));
+// });
 
 
 

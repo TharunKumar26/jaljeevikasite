@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Contact-us</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <head>
+    <style>
+     #logo{
+      height:150px;
+  width:320px;
+  margin-top:30px;
+  padding-left: 70px;
+ 
+  }
+  .btn-default:hover {
+    border-bottom: 5px solid #483D8B;
+  }
+  #logout{
+ 
+    height:50px;
+  width:170px;
+  margin-top:20px;
+  }
+ 
+  #home{
+    margin-top: 30px;
+     margin-left: 10px;
+   }
+ 
+  #about{
+     margin-top: 30px;
+     margin-left: 30px;
+   }
+ 
+   #contact{
+     margin-top: 30px;
+     margin-left: 30px;
+    }
+   #services{
+    margin-top: 30px;
+    margin-left: 30px
+    }
+    body{
+  background-image: url('images/back9.jpg');
+  }
+  #meet{
+  margin-top: 30px;
+  margin-left: 30px;
+}
+.ghost-button2 {
+  display: inline-block;
+  width: 150px;
+  padding: 8px;
+  color:black;
+  border: 1.5px solid black;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+ 
+}
+.ghost-button2:hover,
+.ghost-button2:active {
+  background-color: rgb(62, 123, 202);
+  color:white;
+  text-decoration: none;
+  border: 1.5px solid white;
+ 
+}
+ 
+</style>
+  </head>
+</head>
+  <body>
+    <div class="row"  >
+      <div class="col-sm-3">
+       <img src="/images/logo.jpg" id="logo">
+ 
+      </div>
+       <div class="col-sm-7">
+        <a href="/dashboard"><button type="button" class="btn btn-default" id="home" style="font-size: 18px;"><b>HOME</b></button></a>
+        <a href="/aboutus"><button type="button" class="btn btn-default" id="about" style="font-size: 18px;"><b>ABOUT US</b></button></a>
+        <a href="/services"><button type="button" class="btn btn-default" id="services" style="font-size: 18px;"><b>SERVICES</b></button></a>
+        <a href="#"><button type="button" class="btn btn-default" id="contact" style="font-size: 18px;"><b>CONTACT US</b></button></a>
+        <a href="/meettheteam"><button type="button" class="btn btn-default" id="meet" style="font-size: 18px;"><b>MEET THE TEAM</b></button></a>
+      </div>
+        <div class="col-sm-2">
+          <a href="/users/logout" class="ghost-button2" id="logout"><i class='fas fa-user-alt' style="font-size: 20px;">
+          </i><font style="font-size: 20px;">  Logout</font></a>
+          </div>
+      </div>
+ 
+      <!-----------------------contact us---------------------------------------------->
+      <h1 style="font-family: garamond;color:#483D8B"><b><center>Contact Us</center></b></h1><hr><br><br>
+      <div class="row text-center">
+ 
+      	<div class="col-sm-3">
+      		<b>Communication Address</b><br>
+            Center for aquatic livelihood jaljeevika
+            11, Snehkunj Apartments,
+            Jambhualkar Chowk,
+            Vikas Nagar, Wanowari,
+            Pune, M.H. 411040 , India<br><br>
+ 
+            <b>Registered Address</b><br>
+            Center for aquatic livelihood jaljeevika
+            976, A/p Hingangaon Tal.
+            K. Mahankal, Sangli M.H. 416405
+            M.H. 416405,
+             India
+                  <br><br>
+            <i class='fas fa-envelope'></i> neelkanth.mishra@jaljeevika.org<br>
+             <i class='fas fa-envelope'></i> info@jaljeevika.org<br>
+              <i class='fas fa-phone'></i>+918600043905<br>
+              <i class='fas fa-phone'></i> 020 4123 0493
+      	</div>
+ 
+      	<div class="col-sm-6">
+          <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" 
+            src="https://maps.google.com/maps?q=jaljeevija&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+            frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/en/">
+                embedgooglemap.net</a></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas 
+                {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
+      	</div>
+ 
+ 
+      	<div class="col-sm-3">
+          <div style="border:solid;padding: 30px;border-color: #483D8B">
+          <div style="font-family:garamond;font-size: 30px">Get in Touch with Us:</div><br>
+          <form>
+       <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="name" class="form-control" id="name" placeholder="Enter name" name="name" required>
+       </div>
+      <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+       </div>
+       <div class="form-group">
+       <label for="message">Message:</label>
+        <textarea class="form-control" rows="5" id="message"></textarea>
+        </div>
+       <button type="submit" class="btn btn-primary">Submit</button></form>
+     </form>
+      </div>
+      </div>
+</div>
+</body>
+</html>

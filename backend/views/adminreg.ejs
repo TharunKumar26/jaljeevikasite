@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form </title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="/vendorreg.css">
+</head>
+<body>
+    <%- include ("./partials/messages") %>
+    <div class="main">
+        <div class="container">
+            <form method="POST" action="/admin/register" class="appointment-form" id="appointment-form">
+                <h2>Jaljeevika Admin Registration</h2>
+                <div class="form-group-1">
+                    <input type="text" name="name" id="name" placeholder="Name" required />
+                    <input type="email" name="email" id="email" placeholder="Email" required />
+                    <input type="password" name="password" id="pwd" placeholder="Password" required />
+                    <input type="password" name="password2" id="pwd_rpt" placeholder="Confirm Password" required />
+                    <div class="form-check" style="font-size: 15px;">
+                        <input type="checkbox" name="conditions" id="agree-term" class="agree-term" value="agreed" />
+                        <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree to the  <a href="#" class="term-service">Terms and Conditions</a></label>
+                    </div>
+                    <div class="form-submit">
+                        <input type="submit" name="submit" id="submit" class="submit" value="Register" />
+                    </div>
+                 </div> 
+                 <p style="color: black; font-size:15px; ">Have An Account? <a href="/admin/login" style="color:blue;">Login Here</a></p>  
+            </form>
+        </div>
+    </div>
+    <!-- JS -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/vendorreg.js"></script>
+</body>
+</html>
