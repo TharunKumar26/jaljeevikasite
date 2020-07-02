@@ -1,95 +1,154 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<style>
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-  }
+	<title>My Products</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  .flip-card {
-    background-color: transparent;
-    width: 300px;
-    height: 300px;
-    perspective: 1000px;
-  }
-
-  .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  }
-
-  .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-  }
-
-  .flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-
-  .flip-card-front {
-    background-color: #bbb;
-    color: black;
-  }
-
-  .flip-card-back {
-    background-color: #2980b9;
-    color: white;
-    transform: rotateY(180deg);
-  }
-</style>
+	<!-- Bootstrap css -->
+	<link rel="stylesheet" type="text/css" href="css1/bootstrap.min.css">
+	<!-- Style css -->
+	<link rel="stylesheet" type="text/css" href="css1/productgrid.css">
 </head>
 <body>
-<% products.forEach(product => { %>
+	<div class="container">
+		<h1 class="text-center">My Products</h1>
+		<hr>
 
-  <h1><%= product.name %></h1>
-  <h3><%= product.vendorname %></h3>
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <img src="/images/<%= product.imgurl %>.jpg" alt="Product" style="width:300px;height:300px;">
-      </div>
-      <div class="flip-card-back">
-        <p><%= product.description %></p>
-        <p> <%= product.price %> </p>
-        <p> <%= product.category %> </p>
-        <p> <%= product.vendorlocation %> </p>
-        <button class="delete-product" data-id="<%= product._id %>">Delete</button>
-        <a href="/products/update/<%= product._id %>"><button>Update</button></a>
-      </div>
-    </div>
-  </div>
+		<div class="row">
+			<!-- Product  -->
+			<% products.forEach(product =>{%>
+			<div class="col-md-4 product-grid">
+				<div class="image">
+					<a href="#">
+						<img src="images/<%= product.imageurl%>" class="w-100">
+						<div class="overlay">
+							<div class="detail">View Details</div>
+						</div>
+					</a>
+				</div>
+				<h5 class="text-center"><%=product.name%>></h5>
+				<h5 class="text-center">Price: Rs.<%product.price%></h5>
+				<a  class="btn delete"><button class="delete-product" data-id="<%= product._id %>">Delete</button></a>
+			
+                                <a href="/products/update/<%= product._id %>" class="btn update">UPDATE</a>
+			</div>
+			<%})%>
+			<!-- ./Product -->
 
-<% }) %>
-<script>
-  $(document).ready(function(){
-    $('.delete-product').on('click', function(e){
-      $target = $(e.target);
-      const id = $target.attr('data-id');
-      $.ajax({
-        type: 'DELETE',
-        url: '/products/'+id,
-        success: function(response){
-          location.reload();
-          alert('Product Deleted');
-          //window.location.href='/vendor/myProducts';
-        },
-        error: function(err){
-          console.log(err);
-        }
-      });
-    });
-  });
-</script>
+			<!-- Product  -->
+			<div class="col-md-4 product-grid">
+				<div class="image">
+					<a href="#">
+						<img src="images/harvest1.png" class="w-100">
+						<div class="overlay">
+							<div class="detail">View Details</div>
+						</div>
+					</a>
+				</div>
+				<h5 class="text-center">Harvest1</h5>
+				<h5 class="text-center">Price: Rs.159.00</h5>
+				                           <a href="#" class="btn update">UPDATE</a>
+
+                               
+			</div>
+			<!-- ./Product -->
+
+			<!-- Product  -->
+			<div class="col-md-4 product-grid">
+				<div class="image">
+					<a href="#">
+						<img src="images/harvest1.png" class="w-100">
+						<div class="overlay">
+							<div class="detail">View Details</div>
+						</div>
+					</a>
+				</div>
+				<h5 class="text-center">Harvest1</h5>
+				<h5 class="text-center">Price: Rs1,699.00</h5>
+				<a href="#" class="btn delete">DELETE</a>
+                                <a href="#" class="btn update">UPDATE</a>
+			</div>
+			<!-- ./Product -->
+
+			<!-- Product  -->
+			<div class="col-md-4 product-grid">
+				<div class="image">
+					<a href="#">
+						<img src="images/harvest1.png" class="w-100">
+						<div class="overlay">
+							<div class="detail">View Details</div>
+						</div>
+					</a>
+				</div>
+				<h5 class="text-center">Harvest1</h5>
+				<h5 class="text-center">Price: Rs.159.00</h5>
+				<a href="#" class="btn delete">DELETE</a>
+                                <a href="#" class="btn update">UPDATE</a>
+
+                               
+			</div>
+			<!-- ./Product -->
+
+			<!-- Product  -->
+			<div class="col-md-4 product-grid">
+				<div class="image">
+					<a href="#">
+						<img src="images/harvest1.png" class="w-100">
+						<div class="overlay">
+							<div class="detail">View Details</div>
+						</div>
+					</a>
+				</div>
+				<h5 class="text-center">Harvest1</h5>
+				<h5 class="text-center">Price: Rs.159.00</h5>
+				<a href="#" class="btn delete">DELETE</a>
+                                <a href="#" class="btn update">UPDATE</a>
+
+                               
+			</div>
+			<!-- ./Product -->
+
+			<!-- Product  -->
+			<div class="col-md-4 product-grid">
+				<div class="image">
+					<a href="#">
+						<img src="images/harvest1.png" class="w-100">
+						<div class="overlay">
+							<div class="detail">View Details</div>
+						</div>
+					</a>
+				</div>
+				<h5 class="text-center">Harvest1</h5>
+				<h5 class="text-center">Price: Rs.159.00</h5>
+				<a href="#" class="btn delete">DELETE</a>
+                                <a href="#" class="btn update">UPDATE</a>
+
+                               
+			</div>
+			<!-- ./Product -->
+
+		</div>
+
+	</div>
 </body>
 </html>
+<script>
+	$(document).ready(function(){
+	  $('.delete-product').on('click', function(e){
+		$target = $(e.target);
+		const id = $target.attr('data-id');
+		$.ajax({
+		  type: 'DELETE',
+		  url: '/products/'+id,
+		  success: function(response){
+			location.reload();
+			alert('Product Deleted');
+			//window.location.href='/vendor/myProducts';
+		  },
+		  error: function(err){
+			console.log(err);
+		  }
+		});
+	  });
+	});
+  </script>
