@@ -5,6 +5,7 @@ const isVendor = require('../middleware/is-vendor');
 const isAdmin = require('../middleware/is-admin');
 const apiMain = require('./api-main');
 let Product = require('../models/product.model');
+const path = require('path');
 
 // Welcome Page
 router.get('/', (req, res) => res.render('logreg'));

@@ -58,11 +58,11 @@ router.route('/add').post((req, res) => {
     const vendorid = req.session.user._id;
     const description = req.body.description;
     const price = Number(req.body.price);
-    const vendorname = req.session.user.vendorname;
+    const vendorname = req.body.vendorname;
     const imgurl = req.body.imgurl;
     const category = req.body.category;
     const brand = req.body.brand;
-    const vendorlocation = req.session.user.vendorlocation;
+    const vendorlocation = req.body.vendorlocation;
     const isAuthorised = false;
 
     const newProduct = new Product({
@@ -100,11 +100,11 @@ router.route('/update/:id').post((req, res) => {
             product.name = req.body.name;
             product.description = req.body.description;
             product.price = Number(req.body.price);
-            product.vendorname = req.session.user.vendorname;
+            product.vendorname = req.body.vendorname;
             product.imgurl = req.body.imgurl;
             product.category = req.body.category;
             product.brand = req.body.brand;
-            product.vendorlocation = req.session.user.vendorlocation;
+            product.vendorlocation = req.body.vendorlocation;
             product.isAuthorised = false;
             product.save()
                 .then(() => res.json('Product updated!'))

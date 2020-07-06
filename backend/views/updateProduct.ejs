@@ -41,7 +41,10 @@
 							<label class="header">Price</label>
 							<input type="text" id="name" name="price" value="<%= product.price %>" title="Please enter a Price" required="">
 						</div>					
-						
+						<div class="form-control"> 
+							<label class="header">Vendor Name </label>
+							<input type="text" id="name" name="vendorname" value="<%= product.vendorname %>" title="Please enter your  Name" required="">
+						</div>	
 <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
 <!--
 	<label class="header">Upload Product Image</label>
@@ -82,7 +85,10 @@
 							<label class="header">Category </label>
 							<input type="text" id="name" name="category" value="<%= product.category %>" title="Please enter a Category" required="">
 						</div>
-                       
+                        <div class="form-control"> 
+							<label class="header">Vendor Loction </label>
+							<input type="text" id="name" name="vendorlocation" value="<%= product.vendorlocation %>" title="Please enter a location" required="">
+						</div>
 							
 									  <input type="submit" value="Update Product">
 									  </form>

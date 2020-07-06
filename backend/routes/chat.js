@@ -16,7 +16,6 @@ router.get('/:receiver',(req, res, next)=>{
             const message = req.body.msg;
             }
         console.log(receiver)
-
     }
 })
 */

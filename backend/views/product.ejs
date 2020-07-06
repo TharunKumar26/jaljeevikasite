@@ -4,12 +4,14 @@
   <title>Harvest1</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
 <style>
   .ghost-button2 {
   display: inline-block;
@@ -30,260 +32,444 @@
   border: 1.5px solid white;
  
 }
-
-  *{
-    box-sizing:border-box;
-  }
-  modal body{
-    background-color:#abd9e9;
-    font-family:Arial;
-  }
-  #container{
-    width:700px;
-    height:800px;
-    background:#eff3f7;
-    margin:0 auto;
-    font-size:0;
-    border-radius:5px;
-    overflow:hidden;
-  }
+body {
+	margin: 0;
+	padding: 0;
+}
  
-  main{
-    width:700px;
-    height:800px;
-    display:inline-block;
-    font-size:15px;
-    vertical-align:top;
-  }
-  
-  aside header{
-    padding:30px 20px;
-  }
-  aside input{
-    width:100%;
-    height:50px;
-    line-height:50px;
-    padding:0 50px 0 20px;
-    background-color:#5e616a;
-    border:none;
-    border-radius:3px;
-    color:#fff;
-    background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_search.png);
-    background-repeat:no-repeat;
-    background-position:170px;
-    background-size:40px;
-  }
-  aside input::placeholder{
-    color:#fff;
-  }
-  aside ul{
-    padding-left:0;
-    margin-left:00px;
-    list-style-type:none;
-    overflow-y:scroll;
-    height:690px;
-  }
-  aside li{
-    padding:10px 0 10px 0;
-    margin-bottom: 5px;
-    position: relative;
-    
+*{
+  box-sizing:border-box;
+}
+.modal-body{
+  background-color:#abd9e9;
+  font-family:Arial;
+}
+#container{
+  width:700px;
+  height:800px;
+  background:#eff3f7;
+  margin:0 auto;
+  font-size:0;
+  border-radius:5px;
+  overflow:hidden;
+}
 
-    
-  }
-  aside li:hover{
-    background-color:#5e616a;
-  }
-  h2,h3{
-    margin-left: 30px;
-    margin:0;
-    padding-left: 20px;
-  }
-  aside li img{
-    border-radius:50%;
-    margin-left:20px;
-    margin-right:8px;
-  }
-  aside li div{
-    display:inline-block;
-    vertical-align:top;
-    margin-top:12px;
-  }
-  aside li h2{
-    font-size:18px;
-    color:black;
-    font-weight:normal;
-    margin-bottom:5px;
-  }
-  aside li h3{
-    font-size:12px;
-    color:#7e818a;
-    font-weight:normal;
-  }
-  
-  .status{
-    width:8px;
-    height:8px;
-    border-radius:50%;
-    display:inline-block;
-    margin-right:7px;
-  }
-  .green{
-    background-color:#58b666;
-  }
-  .orange{
-    background-color:#ff725d;
-  }
-  .blue{
-    background-color:#6fbced;
-    margin-right:0;
-    margin-left:7px;
-  }
-  
-  #currentchat{
-    font-size: 20px;
-    background-color: rgb(238, 243, 247);
-  }
-  #unseentag{
-    font-size: 10px;
-    border: 1px solid red;
-    background-color: red;
-    color: white;
-    padding: 8px;
-    margin:0;
-    left: 250px;
-    top: 30px;
-    position: absolute;
-    border-radius: 35px 35px;
-  }
-  
-  
-  main header{
-    height:110px;
-    padding:30px 20px 30px 40px;
-  }
-  main header > *{
-    display:inline-block;
-    vertical-align:top;
-  }
-  main header img:first-child{
-    border-radius:50%;
-  }
-  main header img:last-child{
-    width:24px;
-    margin-top:8px;
-  }
-  main header div{
-    margin-left:10px;
-    margin-right:145px;
-  }
-  main header h2{
-    font-size:16px;
-    margin-bottom:5px;
-  }
-  main header h3{
-    font-size:14px;
-    font-weight:normal;
-    color:#7e818a;
-  }
-  
-  #chat{
-    padding-left:0;
-    margin:0;
-    list-style-type:none;
-    overflow-y:scroll;
-    height:535px;
-    border-top:2px solid #fff;
-    border-bottom:2px solid #fff;
-  }
-  #chat li{
-    padding:10px 30px;
-  }
-  #chat h2,#chat h3{
-    display:inline-block;
-    font-size:13px;
-    font-weight:normal;
-  }
-  #chat h3{
-    color:#bbb;
-  }
-  #chat .entete{
-    margin-bottom:5px;
-  }
-  #chat .message{
-    padding:15px;
-    color:#fff;
-    line-height:15px;
-    max-width:90%;
-    min-width: 40px;
-    display:inline-block;
-    text-align:left;
-    border-radius:5px;
-  }
-  #chat .me{
-    text-align:right;
-  }
-  #chat .you .message{
-    background-color:#58b666;
-  }
-  #chat .me .message{
-    background-color:#6fbced;
-  }
-  #chat .triangle{
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 10px 10px 10px;
-  }
-  #chat .you .triangle{
-      border-color: transparent transparent #58b666 transparent;
-      margin-left:15px;
-  }
-  #chat .me .triangle{
-      border-color: transparent transparent #6fbced transparent;
-      margin-left:575px;
-  }
-  
-  main footer{
-    height:155px;
-    padding:20px 30px 10px 20px;
-  }
-  main footer textarea{
-    resize:none;
-    border:none;
-    display:block;
-    width:100%;
-    height:80px;
-    border-radius:3px;
-    padding:20px;
-    font-size:13px;
-    margin-bottom:13px;
-  }
-  main footer textarea::placeholder{
-    color:#ddd;
-  }
-  main footer img{
-    height:30px;
-    cursor:pointer;
-  }
-  main footer a{
-    
-    margin-left:533px;
-    margin-top:5px;
-    display:inline-block;
-  }
-  main input[type=submit]{
-    text-decoration:none;
-    text-transform:uppercase;
-    font-weight:bold;
-    color:#6fbced;
-    vertical-align:top;
-    position: absolute;
-    margin-top:10px;
-    margin-left: 500px;
-  }
-  
+main{
+  width:700px;
+  height:800px;
+  display:inline-block;
+  font-size:15px;
+  vertical-align:top;
+}
 
+aside header{
+  padding:30px 20px;
+}
+aside input{
+  width:100%;
+  height:50px;
+  line-height:50px;
+  padding:0 50px 0 20px;
+  background-color:#5e616a;
+  border:none;
+  border-radius:3px;
+  color:#fff;
+  background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_search.png);
+  background-repeat:no-repeat;
+  background-position:170px;
+  background-size:40px;
+}
+aside input::placeholder{
+  color:#fff;
+}
+aside ul{
+  padding-left:0;
+  margin-left:00px;
+  list-style-type:none;
+  overflow-y:scroll;
+  height:690px;
+}
+aside li{
+  padding:10px 0 10px 0;
+  margin-bottom: 5px;
+  position: relative;
+  
+  
+}
+aside li:hover{
+  background-color:#5e616a;
+}
+h2,h3{
+  margin-left: 30px;
+  margin:0;
+  padding-left: 20px;
+}
+aside li img{
+  border-radius:50%;
+  margin-left:20px;
+  margin-right:8px;
+}
+aside li div{
+  display:inline-block;
+  vertical-align:top;
+  margin-top:12px;
+}
+aside li h2{
+  font-size:18px;
+  color:black;
+  font-weight:normal;
+  margin-bottom:5px;
+}
+aside li h3{
+  font-size:12px;
+  color:#7e818a;
+  font-weight:normal;
+}
+
+.status{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  display:inline-block;
+  margin-right:7px;
+}
+.green{
+  background-color:#58b666;
+}
+.orange{
+  background-color:#ff725d;
+}
+.blue{
+  background-color:#6fbced;
+  margin-right:0;
+  margin-left:7px;
+}
+
+#currentchat{
+  font-size: 20px;
+  background-color: rgb(238, 243, 247);
+}
+#unseentag{
+  font-size: 10px;
+  border: 1px solid red;
+  background-color: red;
+  color: white;
+  padding: 8px;
+  margin:0;
+  left: 250px;
+  top: 30px;
+  position: absolute;
+  border-radius: 35px 35px;
+}
+
+
+main header{
+  height:110px;
+  padding:30px 20px 30px 40px;
+}
+main header > *{
+  display:inline-block;
+  vertical-align:top;
+}
+main header img:first-child{
+  border-radius:50%;
+}
+main header img:last-child{
+  width:24px;
+  margin-top:8px;
+}
+main header div{
+  margin-left:10px;
+  margin-right:145px;
+}
+main header h2{
+  font-size:16px;
+  margin-bottom:5px;
+}
+main header h3{
+  font-size:14px;
+  font-weight:normal;
+  color:#7e818a;
+}
+
+#chat{
+  padding-left:0;
+  margin:0;
+  list-style-type:none;
+  overflow-y:scroll;
+  height:535px;
+  border-top:2px solid #fff;
+  border-bottom:2px solid #fff;
+}
+#chat li{
+  padding:10px 30px;
+}
+#chat h2,#chat h3{
+  display:inline-block;
+  font-size:13px;
+  font-weight:normal;
+}
+#chat h3{
+  color:#bbb;
+}
+#chat .entete{
+  margin-bottom:5px;
+}
+#chat .message{
+  padding:15px;
+  color:#fff;
+  line-height:15px;
+  max-width:90%;
+  min-width: 40px;
+  display:inline-block;
+  text-align:left;
+  border-radius:5px;
+}
+#chat .me{
+  text-align:right;
+}
+#chat .you .message{
+  background-color:#58b666;
+}
+#chat .me .message{
+  background-color:#6fbced;
+}
+#chat .triangle{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+}
+#chat .you .triangle{
+    border-color: transparent transparent #58b666 transparent;
+    margin-left:15px;
+}
+#chat .me .triangle{
+    border-color: transparent transparent #6fbced transparent;
+    margin-left:575px;
+}
+
+main footer{
+  height:155px;
+  padding:20px 30px 10px 20px;
+}
+main footer textarea{
+  resize:none;
+  border:none;
+  display:block;
+  width:100%;
+  height:80px;
+  border-radius:3px;
+  padding:20px;
+  font-size:13px;
+  margin-bottom:13px;
+}
+main footer textarea::placeholder{
+  color:#ddd;
+}
+main footer img{
+  height:30px;
+  cursor:pointer;
+}
+main footer a{
+  
+  margin-left:533px;
+  margin-top:5px;
+  display:inline-block;
+}
+main input[type=submit]{
+  text-decoration:none;
+  text-transform:uppercase;
+  font-weight:bold;
+  color:#6fbced;
+  vertical-align:top;
+  position: absolute;
+  margin-top:10px;
+  margin-left: 500px;
+}
+
+footer{
+ 
+bottom: 0;
+}
+.footer-distributed{
+background-color: #292c2f;
+box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+box-sizing: border-box;
+width: 100%;
+text-align: left;
+font: bold 16px sans-serif;
+ 
+padding: 55px 50px;
+margin-top: 80px;
+}
+ 
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+display: inline-block;
+vertical-align: top;
+}
+ 
+.footer-distributed .footer-left{
+width: 40%;
+}
+ 
+.footer-distributed h3{
+color:  #ffffff;
+font: normal 36px 'Cookie', cursive;
+margin: 0;
+}
+ 
+.footer-distributed h3 span{
+color:  #5383d3;
+}
+ 
+ 
+.footer-distributed .footer-links{
+color:  #ffffff;
+margin: 20px 0 12px;
+padding: 0;
+}
+ 
+.footer-distributed .footer-links a{
+display:inline-block;
+line-height: 1.8;
+text-decoration: none;
+color:  inherit;
+}
+ 
+.footer-distributed .footer-company-name{
+color:  #8f9296;
+font-size: 14px;
+font-weight: normal;
+margin: 0;
+}
+ 
+ 
+.footer-distributed .footer-center{
+width: 35%;
+}
+ 
+.footer-distributed .footer-center i{
+background-color:  #33383b;
+color: #ffffff;
+font-size: 25px;
+width: 38px;
+height: 38px;
+border-radius: 50%;
+text-align: center;
+line-height: 42px;
+margin: 10px 15px;
+vertical-align: middle;
+}
+ 
+.footer-distributed .footer-center i.fa-envelope{
+font-size: 17px;
+line-height: 38px;
+}
+ 
+.footer-distributed .footer-center p{
+display: inline-block;
+color: #ffffff;
+vertical-align: middle;
+margin:0;
+}
+ 
+.footer-distributed .footer-center p span{
+display:block;
+font-weight: normal;
+font-size:14px;
+line-height:2;
+}
+ 
+.footer-distributed .footer-center p a{
+color:  #5383d3;
+text-decoration: none;;
+}
+ 
+.footer-distributed .footer-right{
+width: 20%;
+}
+ 
+.footer-distributed .footer-company-about{
+line-height: 20px;
+color:  #92999f;
+font-size: 13px;
+font-weight: normal;
+margin: 0;
+}
+ 
+.footer-distributed .footer-company-about span{
+display: block;
+color:  #ffffff;
+font-size: 14px;
+font-weight: bold;
+margin-bottom: 20px;
+}
+ 
+.footer-distributed .footer-icons{
+margin-top: 25px;
+}
+ 
+.footer-distributed .footer-icons a{
+display: inline-block;
+width: 35px;
+height: 35px;
+cursor: pointer;
+background-color:  #33383b;
+border-radius: 2px;
+ 
+font-size: 20px;
+color: #ffffff;
+text-align: center;
+line-height: 35px;
+ 
+margin-right: 3px;
+margin-bottom: 5px;
+}
+ 
+ 
+@media (max-width: 880px) {
+ 
+.footer-distributed{
+  font: bold 14px sans-serif;
+ 
+}
+ 
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+  display: block;
+  width: 100%;
+  margin-bottom: 40px;
+  text-align: center;
+}
+ 
+.footer-distributed .footer-center i{
+  margin-left: 0;
+}
+ 
+ 
+}
+.count{
+  position: absolute;
+  font-size: 20px;
+  color: white;
+  top:0px;
+  left:80px;
+  width: 15px;
+       }
+.count h4{
+  
+  background-color: red;
+  line-height: 15px;
+  font-size: 19px;
+  color: white;
+  border-radius: 10px 10px;
+  border: 1px solid red;
+
+}
 </style>
 </head>
 <body>
@@ -300,6 +486,8 @@
       <a href="/aboutus"><button type="button" class="btn btn-default" id="about" style="font-size: 18px;"><b>ABOUT US</b></button></a>
       <a href="/services"><button type="button" class="btn btn-default" id="services" style="font-size: 18px;"><b>SERVICES</b></button></a>
       <a href="#"><button type="button" class="btn btn-default" id="contact" style="font-size: 18px;"><b>CONTACT US</b></button></a>
+       <a style="position: relative;" href="/chat"><button type="button" class="btn btn-default" id="services" style="font-size: 20px;"><b>MESSAGES <span  class="count"><h4 id="count">0</h4></span>
+      </b></button></a>
       <a href="/meettheteam"><button type="button" class="btn btn-default" id="meet" style="font-size: 18px;"><b>MEET THE TEAM</b></button></a>
     </div>
       <div class="col-sm-2">
@@ -323,18 +511,18 @@
   <b>MRP:</b> Rs.<%= price %><br>
   <b>Vendor Name:</b><%= vendorname %> <br>
   <b>Vendor's Location:</b> <%= vendorlocation %><br><br>
-  <button type="button" onclick="getmsgs('<%=vendorid%>')" class="btn btn-primary btn-md" style="width:200px" data-toggle="modal" data-target="#myModal">Inquire</button><br><br>
+  <button type="button" class="btn btn-primary btn-md" style="width:200px" data-toggle="modal" data-target="#myModal">Inquire</button><br><br>
   <!----------------modal------------------->
   <div class="modal fade" id="myModal" >
     <div class="modal-dialog modal-xl">
       <div class="modal-content" style="border-style: solid;border-color:rgb(100, 147, 209);border-width:4px">
-      
+ 
         <!-- Modal Header -->
         <div class="modal-header">
           <h4 class="modal-title" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Chat Box</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
-        
+ 
         <!-- Modal body -->
         <div class="modal-body">
           <div id="container">
@@ -365,7 +553,7 @@
           </div>
           
         </div>
-        
+ 
         <!-- Modal footer -->
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -383,6 +571,73 @@
   </div>
  
 </div>
+ <script>
+
+ </script>
+<!---------------footer------------->
+<footer class="footer-distributed">
+ 
+  <div class="footer-left">
+ 
+    <h3><span>Jaljeevika</span></h3>
+ 
+    <p class="footer-links">
+      <a href="/dashboard">Home</a>
+      ·
+      <a href="/aboutus">About Us</a>
+      ·
+      <a href="/services">Services</a>
+      ·
+      <a href="/contactus">Contact Us</a>
+      ·
+      
+      <a href="/team">Meet the team</a>
+      ·
+      <a href="/users/logout">Logout</a>
+    </p>
+ 
+    <p class="footer-company-name">Jaljeevika &copy; 2020</p>
+  </div>
+ 
+  <div class="footer-center">
+ 
+    <div>
+      <i class="fa fa-map-marker"></i>
+      <p><span>Jambhualkar Chowk,Wanowari</span> Pune,India</p>
+    </div>
+ 
+    <div>
+      <i class="fa fa-phone"></i>
+      <p>411040</p>
+    </div>
+ 
+    <div>
+      <i class="fa fa-envelope"></i>
+      <p><a href="mailto:support@company.com">info@jaljeevika.org</a></p>
+    </div>
+ 
+  </div>
+ 
+  <div class="footer-right">
+ 
+    <p class="footer-company-about">
+      <span>About the company</span>
+      Centre for Aquatic Livelihood Jaljeevika is addressing the issue of small-scale fish farmers, building community resilience and capacity to enhance livelihood opportunities using existing water bodies, technology and leveraging institutions.
+    </p>
+ 
+    <div class="footer-icons">
+ 
+      <a href="#"><i class="fab fa-facebook-square"></i></a>
+      <a href="#"><i class="fab fa-twitter-square"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+ 
+ 
+    </div>
+ 
+  </div>
+ 
+</footer>
  
  
 <script>
@@ -450,95 +705,51 @@
         element.className = arr1.join(" ");
     }
     //until here
-    
+ 
 </script>
-</body>
 <script>
-
-	function scroll() {
+  function scroll() {
 		var obj = document.getElementById("chatbox");
 		obj.scrollTop = obj.scrollHeight;
 	}
 
-	const newparams = new URLSearchParams(window.location.search)
-	
-	var urlparam = newparams.get('q')
-	console.log( newparams.has('q'))
+	urlparam ="<%=vendorid%>"
 	console.log(urlparam)
+
+	
+	function updatemsg(){
+		
 	
 
-	if(newparams.has('s')){
-		$.ajax({
-			url:'/chat/gtname?id='+urlparam,
-			type: 'GET',
-			success: function(data){
-				console.log(data)
-				$('#chatname').html(data)
-			}
-		})
-		
-	}
-	function updatemsg(){
-		$.ajax({
-			url:'/chat/chatusers?q='+ urlparam,
-			type: 'GET',
-			success: function(data){
-				console.log(data)
-				$('#list').html(data)
-			}
-		})
-	if (newparams.has('q'))
-	{
-
-    $.ajax({
-      url: '/chat/id?q='+ urlparam,
-      type: 'GET',
-      success: function(data){
-        
-        $('#chat').html(data)
-        scroll()
-      }
-    })
-    
-
-
-}
-}
-//updatemsg()
-
-function getmsgs(id){
-  console.log(id)
-  $.ajax({
-
-    url: '/chat/id?q='+ id,
-    type: 'GET',
-    success: function(data){
-      
-      $('#chat').html(data)
+	$.ajax({
+		url: '/chat/id?q='+ urlparam,
+		type: 'GET',
+		success: function(data){
+			
+			$('#chat').html(data)
       scroll()
-    }
-  })
-  setTimeout(()=>{
-    getmsgs(id)
-  },3000)
-  
-  
+      console.log(data)
+		}
+	})
+	
+
+
+
 }
+updatemsg()
 
 function scroll() {
 	var elem = document.getElementById('chat');
 	elem.scrollTop = elem.scrollHeight;
   }
 
-    function sendmsg(id){
+    
 		$('#test1').submit(function (e) {
 		e.preventDefault();
 		console.log($.ajax)
 		var data = $(this).serialize()
-    console.log(data)
-    var cc = $("#testval").val()
-    console.log(cc)
-		geturl = '/chat/send?q='+id
+		console.log(data)
+		geturl = '/chat/send?q='+urlparam
 		$("#test1")[0].reset();
 		$.ajax({
 			url: geturl,
@@ -553,29 +764,10 @@ function scroll() {
 		});
 
 });
-    }
 	
-
-/*
-function ajaxreq(){
-
-	const params = new URLSearchParams(window.location.search)
-	var urlparam = params.get('q')
-	console.log(params.has('q'))
-	console.log(urlparam)
-	$.ajax({
-		url: '/chat?q='+ urlparam,
-		type: 'GET',
-		success: function(data){
-			console.log(data)
-			$('#hi').html(data)
-		}
-	})
-}
-
-*/
 setInterval(() => {
- //getmsgs()
+ updatemsg()
 }, 3000);
 </script>
+</body>
 </html>
