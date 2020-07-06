@@ -8,6 +8,7 @@
     font-family: Arial, Helvetica, sans-serif;
   }
 
+<<<<<<< HEAD
   .flip-card {
     background-color: transparent;
     width: 300px;
@@ -51,6 +52,40 @@
 </head>
 <body>
 <% products.forEach(product => { %>
+=======
+	<!-- Bootstrap css -->
+	<link rel="stylesheet" type="text/css" href="css1/bootstrap.min.css">
+	<!-- Style css -->
+	<link rel="stylesheet" type="text/css" href="css1/productgrid.css">
+</head>
+<body>
+	<div class="container">
+		<h1 class="text-center">My Products</h1>
+		<hr>
+
+		<div class="row">
+			<!-- Product  -->
+			<% products.forEach(product =>{%>
+			<div class="col-md-4 product-grid">
+				<div class="image">
+					<a href="#">
+						<img src="images/<%= product.imageurl%>" class="w-100">
+						<div class="overlay">
+							<div class="detail">View Details</div>
+						</div>
+					</a>
+				</div>
+				<h5 class="text-center"><%=product.name%>></h5>
+				<h5 class="text-center">Price: Rs.<%product.price%></h5>
+				<a  class="btn delete"><button class="delete-product" data-id="<%= product._id %>">Delete</button></a>
+			
+                                <a href="/products/update/<%= product._id %>" class="btn update">UPDATE</a>
+			</div>
+			<%})%>
+			<!-- ./Product -->
+
+			
+>>>>>>> 4d25f25e23126611027783a4279b4fceb0d98c31
 
   <h1><%= product.name %></h1>
   <h3><%= product.vendorname %></h3>
@@ -93,3 +128,26 @@
 </script>
 </body>
 </html>
+<<<<<<< HEAD
+=======
+<script>
+	$(document).ready(function(){
+	  $('.delete-product').on('click', function(e){
+		$target = $(e.target);
+		const id = $target.attr('data-id');
+		$.ajax({
+		  type: 'DELETE',
+		  url: '/products/'+id,
+		  success: function(response){
+			location.reload();
+			alert('Product Deleted');
+			//window.location.href='/vendor/myProducts';
+		  },
+		  error: function(err){
+			console.log(err);
+		  }
+		});
+	  });
+	});
+  </script>
+>>>>>>> 4d25f25e23126611027783a4279b4fceb0d98c31
